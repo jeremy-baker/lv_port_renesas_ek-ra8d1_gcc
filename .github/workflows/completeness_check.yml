@@ -42,7 +42,7 @@ jobs:
 
       - name: Check if https://github.com/lvgl/lvgl_project_creator/blob/master/manifests has a link to this repo
         run: |
-          REPO_URL=$(git config --get remote.origin.url | sed 's/\.git$//')
+          REPO_URL=$(git config --get remote.origin.url | sed 's/.*\/\/[^\/]*\/\([^\/]*\/[^\/]*\).*/\1/')
           curl -s https://raw.githubusercontent.com/lvgl/lvgl_project_creator/master/manifests | grep -q "$REPO_URL"
           if [ $? -ne 0 ]; then
             echo "Manifest does not contain a link to this repository." && exit 1;
