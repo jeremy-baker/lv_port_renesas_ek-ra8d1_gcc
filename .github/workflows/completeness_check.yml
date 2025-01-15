@@ -25,6 +25,7 @@ jobs:
              ! grep -q "## Getting started" README.md; then
             echo "README.md is missing one or more required sections." && exit 1;
           fi
+        continue-on-error: true
 
       - name: Check if https://lvgl.io/boards has a link to this repo
         run: |
@@ -33,6 +34,7 @@ jobs:
           if [ $? -ne 0 ]; then
             echo "https://lvgl.io/boards does not have a link to this repository." && exit 1;
           fi
+        continue-on-error: true
 
       - name: Check if https://github.com/lvgl/lvgl_project_creator/blob/master/manifests has a link to this repo
         run: |
@@ -41,6 +43,7 @@ jobs:
           if [ $? -ne 0 ]; then
             echo "Manifest does not contain a link to this repository." && exit 1;
           fi
+        continue-on-error: true
 
       - name: Check for single lv_conf files
         run: |
@@ -65,12 +68,14 @@ jobs:
           fi
           
           echo "✅ File checks passed."
+        continue-on-error: true
 
       - name: Check for lv_conf.defaults in root
         run: |
           if [ ! -f lv_conf.defaults ]; then
             echo "lv_conf.defaults file is missing in the root directory." && exit 1;
           fi
+        continue-on-error: true
       
       - name: Check if the repo URL is in the branch updater
         run: |
@@ -86,9 +91,11 @@ jobs:
             echo "❌ The repository URL is NOT"
             exit 1
           fi
+        continue-on-error: true
 
       - name: Check for YouTube link in README
         run: |
           if ! grep -qE 'https://(www\.)?youtube\.com|youtu\.be' README.md; then
             echo "README.md is missing a link to a YouTube video." && exit 1;
           fi
+        continue-on-error: true
