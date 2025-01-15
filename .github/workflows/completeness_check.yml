@@ -48,7 +48,7 @@ jobs:
           
           # Find files
           LV_CONF_H_COUNT=$(find . -type f -name "lv_conf.h" | wc -l)
-          LV_CONF_DEFAULT_COUNT=$(find . -type f -name "lv_conf.default" | wc -l)
+          LV_CONF_DEFAULT_COUNT=$(find . -type f -name "lv_conf.defaults" | wc -l)
           
           echo "Found $LV_CONF_H_COUNT lv_conf.h file(s)."
           echo "Found $LV_CONF_DEFAULT_COUNT lv_conf.defaults file(s)."
