@@ -50,15 +50,19 @@ Check out EK-RA8D1 in action, running LVGL's benchmark demo:
 - Connect the USB cable to the `Debug1` (J10) connector
 
 ### Software setup
-- You can clone the repository with the following command:
+- Get e2studio (Eclipse based Renesas IDE) and the latest FSP (Flexible Software Package, the SDK of Renesas) from [https://github.com/renesas/fsp/releases](https://github.com/renesas/fsp/releases).
+FSPs are backward compatible so when prompted, feel free to selected the latest FSP.
+
+- Clone this repository with the following command:
     ```
     git clone https://github.com/lvgl/lv_port_renesas_ek-ra8d1.git --recurse-submodules
     ```
     Downloading the `.zip` from GitHub doesn't work as it doesn't download the submodules.
 
-- Follow the *RA family* section of the [*documentation*](https://docs.lvgl.io/master/integration/chip/renesas.html#get-started-with-the-renesas-ecosystem) to prepare your environment and import the project
+- **Note:** Debug  `printf` output is via the Jlink VCOM port, 921600 8,n,1
 
->**Note:** Debug  `printf` output is via the Jlink VCOM port, 921600 8,n,1
+- To learn more about Renesas's *RA family* check out this section of the [*documentation*](https://docs.lvgl.io/master/integration/chip/renesas.html#get-started-with-the-renesas-ecosystem).
+
 
 ## Contribution and Support
 
