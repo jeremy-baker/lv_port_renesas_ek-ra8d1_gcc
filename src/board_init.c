@@ -8,7 +8,11 @@
 #include "LVGL_thread.h"
 #include "touch_GT911.h"
 
+#if LV_USE_DRAW_DAVE2D
+#define DIRECT_MODE 1
+#else
 #define DIRECT_MODE 0
+#endif
 
 static void touch_init(void)
 {
